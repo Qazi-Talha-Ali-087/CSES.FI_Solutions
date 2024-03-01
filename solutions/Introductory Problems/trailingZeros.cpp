@@ -22,3 +22,4 @@ int main()
     }
     cout<<min(five,two);
     return 0;
+}
