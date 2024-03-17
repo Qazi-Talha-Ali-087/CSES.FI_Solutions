@@ -11,6 +11,25 @@ int main()
     {
         cin>>desired_size[i];
     }
-    
+    vector <int> size(m);
+    for(int i=0;i<m;i++)
+    {
+        cin>>size[i];
+    }
+    sort(size.begin(),size.end());
+    sort(desired_size.begin(),desired_size.end());
+    int count = 0;
+    for(int i=0;i<desired_size.size();i++)
+    {
+        for(int j = count;j<size.size();j++)
+        {
+            if(size[j]-k>=desired_size[i] && size[j]+k<=desired_size[i])
+            {
+                count++;
+                break;
+            }
+        }
+    }
+    cout<<count;
       return 0;
 }
