@@ -1,27 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
-    int n;
-    cin>>n;
-    unordered_map<int,int> ans;
+    long long int n;
+    cin >> n;
+
+    unordered_map<long long int, long long int> ans;
     int m;
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        cin>>m;
-        ans[m]=i;
+        cin >> m;
+        ans[m] = i;
     }
-    int count=1;
-    int start ;
-    start = ans[1];
-    for(int i=2;i<=n;i++)
+
+    long long int count = 1;
+    long long int start = ans[1]; // Initialize start with the position of the first number
+
+    for (int i = 2; i <= n; i++)
     {
-        if(ans[i]<start)
+        if (ans[i] < start)
         {
-            start = ans[i];
-            count++;
+            start = ans[i]; // Update start only when a smaller position is found
+            count++; // Increment count for each round
         }
-    }   
-    cout<<count;
-      return 0;
+        else
+        {
+            start=ans[i];
+        }
+    }
+
+    cout << count << endl;
+    return 0;
 }
