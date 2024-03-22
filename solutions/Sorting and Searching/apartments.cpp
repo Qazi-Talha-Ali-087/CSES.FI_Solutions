@@ -19,11 +19,11 @@ int main()
     sort(size.begin(),size.end());
     sort(desired_size.begin(),desired_size.end());
     int count = 0;
-    for(int i=0;i<desired_size.size();i++)
+    for(int i=0;i<size.size();i++)
     {
-        for(int j = count;j<size.size();j++)
+        for(int j = count;j<desired_size.size();j++)
         {
-            if(size[j]-k>=desired_size[i] && size[j]+k<=desired_size[i])
+            if(size[i]<=desired_size[j] +k && size[i] >= desired_size[j]-k)
             {
                 count++;
                 break;
