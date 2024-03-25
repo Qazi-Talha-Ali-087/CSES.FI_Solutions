@@ -10,16 +10,16 @@ int main()
         cin>>v[i];
     }
     sort(v.begin(),v.end());
-    long long int prefix=0,count = 0;
+    long long int a=1;
     for(int i=0;i<n;i++)
     {
-        prefix+=v[i];
-        count++;
-        if(prefix!=count)
+        if(a<v[i])
         {
-            cout<<count<<endl;
-            return 0;
+            break;
         }
+        else 
+        a+= v[i];
     }
+    cout<<a;
       return 0;
 }
